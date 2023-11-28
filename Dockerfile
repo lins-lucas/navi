@@ -12,6 +12,8 @@ FROM node:21-alpine3.17
 
 WORKDIR /app
 
+COPY --from=build /app/dist ./dist
+
 EXPOSE 3000
 
 CMD [ "node", "dist/index.js" ]
